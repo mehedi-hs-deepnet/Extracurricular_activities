@@ -14,7 +14,13 @@ from PIL import Image
 import streamlit as st
 
 # Add project root directory to sys.path
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if "BASE_DIR" in globals():
+    PROJECT_ROOT = globals()["BASE_DIR"]
+elif os.path.basename(os.path.dirname(os.path.abspath(__file__))) == "main":
+    PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+else:
+    PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
@@ -267,8 +273,19 @@ def action_move_paragraph_down(index: int):
 # Sidebar
 # ---------------------------------------------------------
 with st.sidebar:
-    logo_path = os.path.join(PROJECT_ROOT, "img", "IEEE_SB.png")
-    if os.path.exists(logo_path):
+    logo_path = None
+    candidates = [
+        os.path.join(PROJECT_ROOT, "img", "IEEE_SB.png"),
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "img", "IEEE_SB.png"),
+        os.path.join(os.path.abspath(os.path.join(os.path.dirname(get_default_template_path()), "..")), "img", "IEEE_SB.png"),
+        "img/IEEE_SB.png",
+    ]
+    for c in candidates:
+        if os.path.exists(c):
+            logo_path = c
+            break
+
+    if logo_path:
         st.image(
             logo_path,
             width=350,
