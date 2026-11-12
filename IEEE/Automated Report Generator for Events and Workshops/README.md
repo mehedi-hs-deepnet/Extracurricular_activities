@@ -8,15 +8,23 @@
 
 Fill in a form and download a professional Word report in one click.
 
+<br/>
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ieee-automated-report-generator.streamlit.app)
+
+<br/>
+
 ![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-UI-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![docxtpl](https://img.shields.io/badge/docxtpl-Jinja2-E8860A?style=for-the-badge)
 ![Output](https://img.shields.io/badge/Output-.docx-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-00D084?style=for-the-badge&logo=streamlit&logoColor=white)](https://ieee-automated-report-generator.streamlit.app)
 
 
 <br/>
 
 
+[🌐 Live App](https://ieee-automated-report-generator.streamlit.app) •
 [ Features](#-key-features) •
 [ Workflow](#-system-architecture--visual-workflow) •
 [ Tech Stack](#️-tech-stack) •
@@ -31,6 +39,8 @@ Fill in a form and download a professional Word report in one click.
 ## Description
 
 > A powerful tool that uses a Streamlit UI to automatically generate Word (.docx) reports.
+> 
+> 🌐 **Live Web Application:** [https://ieee-automated-report-generator.streamlit.app](https://ieee-automated-report-generator.streamlit.app)
 
 ---
 
@@ -196,6 +206,15 @@ Automated Event Report Generator/
 ---
 
 ## How to Run
+
+### 🌐 Live Online (No Installation Needed)
+
+Directly open the live web app in your browser:  
+👉 **[https://ieee-automated-report-generator.streamlit.app](https://ieee-automated-report-generator.streamlit.app)**
+
+---
+
+### 💻 Run Locally
 
 ```bash
 # 1. Install dependencies
