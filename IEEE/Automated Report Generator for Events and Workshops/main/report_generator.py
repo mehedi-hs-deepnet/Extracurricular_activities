@@ -77,6 +77,9 @@ def generate_report_bytes(
     description: Any,
     banner_file: Optional[Any] = None,
     template_path: Optional[str] = None,
+    organized_by: str = "",
+    co_organized_by: str = "",
+    participants: str = ""
 ) -> bytes:
     """
     সমস্ত ফিল্ড এবং ব্যানার ইমেজ প্রসেস করে Word (.docx) ফাইলের বাইনারি bytes রিটার্ন করে।
@@ -107,6 +110,9 @@ def generate_report_bytes(
         time=time,
         venue=venue,
         report_name=report_name,
+        organized_by=organized_by,
+        co_organized_by=co_organized_by,
+        participants=participants
     )
     context.update(event_dict)
 

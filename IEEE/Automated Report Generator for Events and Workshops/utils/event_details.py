@@ -66,6 +66,9 @@ def prepare_event_details(
     time,
     venue,
     report_name,
+    organized_by,
+    co_organized_by,
+    participants
 ) -> dict:
     """
     ইভেন্টের তথ্য প্রসেস করে docxtpl-এর context dict-এর অংশ হিসেবে রিটার্ন করে।
@@ -85,4 +88,7 @@ def prepare_event_details(
         "time": format_time(time),
         "venue": _clean(venue),
         "report_name": _clean(report_name),
+        "organized_by": _clean(organized_by),
+        "co_organized_by": _clean(co_organized_by),
+        "participants": _clean(participants)
     }

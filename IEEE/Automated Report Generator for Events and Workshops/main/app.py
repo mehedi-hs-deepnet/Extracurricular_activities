@@ -367,6 +367,12 @@ with col_left:
                 key="venue",
                 placeholder="e.g. University Auditorium",
             )
+
+            st.text_input(
+                "Number of Participants",
+                key="participants",
+                placeholder="e.g. 85 Participants"
+            )
         with c2:
             st.date_input(
                 "Event Date *",
@@ -375,7 +381,17 @@ with col_left:
             st.text_input(
                 "Event Time *",
                 key="time_str",
-                placeholder="e.g. 10:30 AM - 01:30 PM",
+                placeholder="e.g. 10:30 AM - 01:30 PM"
+            )
+            st.text_input(
+                "Ogranized By",
+                key="organized_by",
+                placeholder="e.g. IEEE GUB Student Branch"
+            )
+            st.text_input(
+                "Co-Organized By (Optional)",
+                key="co_organized_by",
+                placeholder="e.g. Dept. of CSE, Green University"
             )
 
     # ----------------- SECTION 2: Banner Image -----------------
@@ -607,6 +623,9 @@ with col_right:
                         footer_text=st.session_state["footer_text"],
                         description=active_paragraphs,
                         banner_file=uploaded_banner,
+                        organized_by=st.session_state.get("organized_by", ""),
+                        co_organized_by=st.session_state.get("co_organized_by", ""),
+                        participants=st.session_state.get("participants", ""),
                     )
                     safe_filename = sanitize_filename(st.session_state["report_id"])
                     st.session_state["report_bytes"] = docx_bytes
