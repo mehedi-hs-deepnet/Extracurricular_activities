@@ -158,6 +158,9 @@ def generate_report(
     description: Any,
     banner_file: Optional[Any] = None,
     template_path: Optional[str] = None,
+    organized_by: str = "",
+    co_organized_by: str = "",
+    participants: str = "",
 ) -> io.BytesIO:
     """
     generate_report_bytes-কে কল করে একটি io.BytesIO অবজেক্ট রিটার্ন করে।
@@ -176,6 +179,9 @@ def generate_report(
         description=description,
         banner_file=banner_file,
         template_path=template_path,
+        organized_by=organized_by,
+        co_organized_by=co_organized_by,
+        participants=participants,
     )
     stream = io.BytesIO(raw_bytes)
     return stream
