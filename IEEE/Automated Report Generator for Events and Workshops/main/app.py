@@ -267,10 +267,12 @@ def action_move_paragraph_down(index: int):
 # Sidebar
 # ---------------------------------------------------------
 with st.sidebar:
-    st.image(
-        "img/IEEE_SB.png",
-        width=350,
-    )
+    logo_path = os.path.join(PROJECT_ROOT, "img", "IEEE_SB.png")
+    if os.path.exists(logo_path):
+        st.image(
+            logo_path,
+            width=350,
+        )
     st.markdown("### Quick Actions")
     col_sb1, col_sb2 = st.columns(2)
     with col_sb1:
